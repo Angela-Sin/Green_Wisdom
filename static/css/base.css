@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* header */
+
+:root {
+    /** Fonts */
+    --title: 'Poppins', serif;
+    --main-font: 'Poppins', serif;
+}
+
+/* Basic CSS for Header and Navigation */
+
+/* Header background and overall styling */
+header {
+    background-color: #f8f9fa; /* Light gray background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo styling */
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Navbar links */
+  .navbar-nav .nav-link {
+    color: #333; /* Dark text for better readability */
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Active and hover states for nav links */
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: #28a745; /* Green background for hover */
+    border-radius: 5px;
+  }
+  
+  /* Disabled link styling */
+  .nav-link.disabled {
+    color: #6c757d;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .dropdown-item {
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Search form */
+  form[role="search"] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+  }
