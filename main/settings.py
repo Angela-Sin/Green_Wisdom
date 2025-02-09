@@ -54,9 +54,31 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'cloudinary_storage',
+    'cloudinary',
+    'djrichtextfield',
 ]
 
 SITE_ID = 1
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],  
+    'init_template': 'djrichtextfield/init/ckeditor.js',
+    'settings': {
+        'toolbar': [
+            ['Format', 'Bold', 'Italic', 'Underline', 'Strike'],
+            ['NumberedList', 'BulletedList', 'Outdent', 'Indent'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+            ['Link', 'Unlink', 'Image', 'Table'],
+            ['Undo', 'Redo'],
+            ['Maximize', 'Source']
+        ],
+        'format_tags': 'p;h1;h2;h3;h4;h5;h6;div',
+        'forcePasteAsPlainText': True,
+        'autoParagraph': True,
+        'removePlugins': 'elementspath',
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -170,6 +192,16 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
+
+# Cloudinary file
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "drnxevjlg",
+    "API_KEY": "157299843745777",
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET")
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Account Setup

@@ -34,7 +34,7 @@ class BlogPost(models.Model):
     featured_image = ResizedImageField(
         size=[800, None],
         quality=75,
-        upload_to="blog_images/",
+        upload_to="static/images/",
         force_format="WEBP",
         blank=False,
         null=False,
