@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
+
 POST_CATEGORIES = (
     ("tips", "Gardening Tips"),
     ("organic", "Organic Gardening"),
@@ -34,7 +35,7 @@ class BlogPost(models.Model):
     featured_image = ResizedImageField(
         size=[800, None],
         quality=75,
-        upload_to="static/images/",
+        upload_to="gardening_blog/",
         force_format="WEBP",
         blank=False,
         null=False,

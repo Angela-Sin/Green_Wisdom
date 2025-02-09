@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -195,13 +195,12 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Cloudinary file
 
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "drnxevjlg",
-    "API_KEY": "157299843745777",
-    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET")
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Account Setup
