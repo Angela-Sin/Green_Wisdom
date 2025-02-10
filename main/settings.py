@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -190,9 +190,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Cloudinary file
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
-}
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
