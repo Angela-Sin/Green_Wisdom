@@ -32,7 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com',
+                'localhost', 'https://green-wisdom-99e0528945fb.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://green-wisdom-99e0528945fb.herokuapp.com",
