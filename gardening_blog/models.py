@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+from cloudinary.models import CloudinaryField
 
 
 POST_CATEGORIES = (

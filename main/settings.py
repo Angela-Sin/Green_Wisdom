@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -62,21 +62,15 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 DJRICHTEXTFIELD_CONFIG = {
-    'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],  
+    'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
     'init_template': 'djrichtextfield/init/ckeditor.js',
     'settings': {
         'toolbar': [
-            ['Format', 'Bold', 'Italic', 'Underline', 'Strike'],
-            ['NumberedList', 'BulletedList', 'Outdent', 'Indent'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
-            ['Link', 'Unlink', 'Image', 'Table'],
-            ['Undo', 'Redo'],
-            ['Maximize', 'Source']
+            ['Format', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList'], ['Undo', 'Redo'],
+            ['Maximize']
         ],
-        'format_tags': 'p;h1;h2;h3;h4;h5;h6;div',
-        'forcePasteAsPlainText': True,
-        'autoParagraph': True,
-        'removePlugins': 'elementspath',
+        'format_tags': 'p;h1;h2;h3'
     }
 }
 

@@ -12,6 +12,7 @@ class BlogPostAdmin(admin.ModelAdmin):
         "updated_date",
         "featured_image",
         "summary",
+        "featured_image",
     )
     search_fields = ("title", "summary", "content")
     list_filter = ("category", "published_date")
