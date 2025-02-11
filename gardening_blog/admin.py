@@ -17,3 +17,4 @@ class BlogPostAdmin(admin.ModelAdmin):
     search_fields = ("title", "summary", "content")
     list_filter = ("category", "published_date")
     ordering = ("-published_date",)
+

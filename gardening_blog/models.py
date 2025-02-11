@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
-from cloudinary.models import CloudinaryField
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
 POST_CATEGORIES = (
@@ -35,6 +35,7 @@ class BlogPost(models.Model):
     content = RichTextField(max_length=20000, null=False, blank=False)
     featured_image = ResizedImageField(
         size=[800, None],
+        storage=MediaCloudinaryStorage(),
         quality=75,
         upload_to="gardening_blog/",
         force_format="WEBP",
