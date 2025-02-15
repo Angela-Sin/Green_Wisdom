@@ -133,6 +133,22 @@ footer {
     transform: scale(1.2);
     opacity: 1;
   }
+
+  /* Posts */
+
+  .card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.posts {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.posts:hover {
+    cursor: pointer;
+}
   
   /* Responsive Design */
   @media (max-width: 600px) {
