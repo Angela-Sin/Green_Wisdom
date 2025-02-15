@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'home',
-    'gardening_blog',
+    'blog',
 
     'crispy_forms',
     'crispy_bootstrap5',
