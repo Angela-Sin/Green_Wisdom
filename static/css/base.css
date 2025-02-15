@@ -149,7 +149,7 @@ footer {
 .posts:hover {
     cursor: pointer;
 }
-  
+ 
   /* Responsive Design */
   @media (max-width: 600px) {
     .social-icon {

@@ -43,9 +43,7 @@ class BlogPost(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=150, null=False, blank=False)
-    category = models.CharField(
-        max_length=50, choices=POST_CATEGORIES, default="tips"
-    )
+    category = models.CharField(max_length=50, choices=POST_CATEGORIES, default="tips")
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -54,5 +52,6 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return str(self.title)
+
 
 # Create your models here.
