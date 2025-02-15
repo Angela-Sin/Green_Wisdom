@@ -3,96 +3,6 @@
 {% block title %}Blog Post Detail - {{ post.title }}{% endblock %}
 
 {% block content %}
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .post-info {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .post-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 4px solid #4caf50;
-        }
-
-        .post-detail h1 {
-            font-size: 2rem;
-            margin-top: 20px;
-            color: #333;
-        }
-
-        .post-detail p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #45a049;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-danger {
-            background-color: #f44336;
-            color: white;
-            border: none;
-        }
-
-        .btn-danger:hover {
-            background-color: #d32f2f;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .post-container {
-            margin-top: 20px;
-        }
-
-        .content {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .content h2 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-    </style>
 
     <div class="container">
         <div class="post-info mt-3 p-1">
@@ -123,3 +33,5 @@
         </div>
     </div>
 {% endblock %}
+
+
