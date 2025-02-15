@@ -4,34 +4,48 @@
 
 {% block content %}
 
-    <div class="container">
-        <div class="post-info mt-3 p-1">
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left: Image Section -->
+        <div class="col-md-4">
             <div class="post-img">
-                <img src="{{ post.featured_image.url }}" alt="{{ post.image_alt }}" class="img-fluid rounded">
+                <img src="{{ post.featured_image.url }}" alt="{{ post.image_alt }}" class="img-fluid rounded shadow">
             </div>
-            <div class="post-detail">
-                <h1 class="text-center">{{ post.title }}</h1>
-                <p class="text-center">Written by {{ post.author }} on {{ post.published_date|date:"F j, Y" }}</p>
-                <p class="text-center"><strong>Category: </strong> {{ post.get_category_display }}</p>
+        </div>
+
+        <!-- Right: Content Section -->
+        <div class="col-md-8">
+            <div class="post-detail bg-light p-3 rounded shadow" style="height: 400px; overflow-y: auto;">
+                <h1 class="mb-3">{{ post.title }}</h1>
+                <p class="text-muted">
+                    <strong>Category: </strong>
+                    <span class="badge bg-secondary">{{ post.get_category_display }}</span>
+                </p>
                 <hr>
                 <p>{{ post.summary }}</p>
-                
+                <h2>Post Content</h2>
+                <div>{{ post.content|safe }}</div>
+            </div>
+
+            <!-- Author and Actions -->
+            <div class="mt-4">
+                <p class="text-muted">Written by <strong>{{ post.author }}</strong> on 
+                    <time datetime="{{ post.published_date|date:'Y-m-d' }}">{{ post.published_date|date:"F j, Y" }}</time>
+                </p>
+
                 {% if request.user == post.author %}
-                <div class="text-center">
-                    <a href="" class="btn btn-primary w-25">Edit</a>
-                    <a href="" class="btn btn-danger w-25">Delete</a>
+                <div class="d-flex justify-content-start">
+                    <a href="" class="btn btn-primary me-2">Edit</a>
+                    <a href="" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this post?');">
+                        Delete
+                    </a>
                 </div>
                 {% endif %}
             </div>
         </div>
-        
-        <div class="post-container">
-            <div class="content p-3">
-                <h2>Content</h2>
-                <div>{{ post.content|safe }}</div>
-            </div>
-        </div>
     </div>
+</div>
 {% endblock %}
 
 
