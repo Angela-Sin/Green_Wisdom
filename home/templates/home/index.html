@@ -1,1 +1,42 @@
 {% extends 'base.html' %}
+
+{% block title %}Gardening Blog{% endblock %}
+
+{% block content %}
+<div class="container flex-column pt-3">
+    <section class="text-center">
+        <h1 class="main-title mx-auto">Welcome to the Ultimate Gardening Blog</h1>
+
+        <p class="pt-4">
+            Whether you're a seasoned gardener or just starting out, our blog offers a wealth of information on all things gardening. 
+            From tips on plant care to in-depth guides on seasonal gardening, we’ve got you covered. Explore our blog posts, learn new techniques, 
+            and grow your garden with confidence. Join our community and get inspired to cultivate your green space!
+        </p>
+    </section>
+
+    <section>
+        <h2 class="category-title text-center pt-5">Latest Blog Posts</h2>
+
+        <div class="blog-posts-container">
+            {% for post in posts %}
+                <div class="blog-post-card">
+                    <a href="{% url 'post_detail' post.id %}" class="img-container">
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.image_alt }}" style="width: 100%">
+                        <div class="overlay">
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.summary|truncatewords:20 }}</p>
+                        </div>
+                    </a>
+                    <div class="post-info">
+                        <span class="category-badge">{{ post.get_category_display }}</span>
+                        <span class="published-date">{{ post.published_date|date:"F j, Y" }}</span>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No blog posts available yet. Check back soon!</p>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+

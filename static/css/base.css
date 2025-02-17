@@ -171,7 +171,6 @@ footer {
   padding: 0.5em 1em;
 }
 
- 
   /* Responsive Design */
   @media (max-width: 600px) {
     .social-icon {
@@ -180,3 +179,73 @@ footer {
       margin: 0 5px;
     }
   }
+
+/* Style for the blog posts index html. */
+.blog-posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding-top: 30px;
+}
+
+.blog-post-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.img-container {
+  position: relative;
+  display: block;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.post-info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.category-badge {
+  background-color: #6d8b3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.published-date {
+  color: #888;
+}
