@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
+from django.db.models import Q
+
 from .models import BlogPost
 from .forms import BlogPostForm
 
@@ -21,8 +23,16 @@ class Posts(ListView):
     context_object_name = "posts"
 
     def get_queryset(self):
-        posts = super().get_queryset()
-        print("Retrieved posts:", posts)
+        query = self.request.GET.get('q')
+        if query:
+            posts = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(summary__icontains=query) |
+                Q(content__icontains=query) |
+                Q(category__icontains=query)
+            )
+        else:
+            posts = self.model.objects.all()
         return posts
 
 
