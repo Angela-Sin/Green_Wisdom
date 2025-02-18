@@ -27,5 +27,6 @@ urlpatterns = [
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
-    path('favicon.ico', RedirectView.as_view(url=favicon_url, permanent=True))
+    path('favicon.ico', RedirectView.as_view(url=favicon_url, permanent=True)),
+    path('profiles/', include('profiles.urls'))
 ]
