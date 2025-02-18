@@ -19,7 +19,7 @@
                 </div>
                 </a>
                 <div class="post-info">
-                    <span class="category-badge">{{ post.category }}</span>
+                    <span class="category-badge">{{ post.get_category_display }}</span>
                     <span class="published-date">{{ post.published_date|date:"F j, Y" }}</span>
                 </div>
             </div>
