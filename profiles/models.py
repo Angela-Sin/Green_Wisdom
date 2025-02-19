@@ -6,6 +6,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from django_resized import ResizedImageField
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
 class Profile(models.Model):
@@ -14,6 +15,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
     image = ResizedImageField(
         size=[300, 300],
+        storage=MediaCloudinaryStorage(),
         quality=75,
         upload_to="profiles/",
         force_format="WEBP",
