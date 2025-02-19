@@ -30,15 +30,15 @@
         <div class="profile-posts">
             <h2 class="text-center pb-4">Latest Posts</h2>
             {% if profile.user.blog_author.all %}
-            {% for post in profile.user.post_author.all %}
+            {% for post in profile.user.blog_author.all %}
             <a href="{% url 'post_detail' post.id %}">
                 <h3>{{ post.title }}</h3>
             </a>
-            {{ post.published_date }}  <!-- Corrected to use "published_date" field instead of "posted_date" -->
+            {{ post.published_date }}  
             <hr>
             {% endfor %}
             {% else %}
-            <p>No posts to display.</p>  <!-- Added condition to display message if no posts -->
+            <p>No posts to display.</p>  
             {% endif %}
         </div>
     </div>

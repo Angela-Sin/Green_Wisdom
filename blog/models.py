@@ -54,4 +54,3 @@ class BlogPost(models.Model):
         return str(self.title)
 
 
-# Create your models here.
