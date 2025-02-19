@@ -12,7 +12,7 @@ from cloudinary_storage.storage import MediaCloudinaryStorage
 class Profile(models.Model):
     """Profile model"""
 
-    user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = ResizedImageField(
         size=[300, 300],
         storage=MediaCloudinaryStorage(),

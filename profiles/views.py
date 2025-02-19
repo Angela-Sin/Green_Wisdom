@@ -10,7 +10,7 @@ class Profiles(TemplateView):
     template_name = "profiles/profile.html"
 
     def get_context_data(self, **kwargs):
-        profile = Profile.objects.get(user=self.kwargs["pk"])
+        profile = Profile.objects.get(pk=self.kwargs["pk"])
         context = {
             "profile": profile,
             'form': ProfileForm(instance=profile)
