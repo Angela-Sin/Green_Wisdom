@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.templatetags.static import static
+from django.conf.urls import handler404
+from django.shortcuts import render
 
 favicon_url = static('images/favicon.ico')
 
@@ -30,3 +32,9 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=favicon_url, permanent=True)),
     path('profiles/', include('profiles.urls'))
 ]
+
+
+def custom_page_not_found_view(request, exception):
+    return render(request, 'errors/404.html', status=404)
+
+handler404 = custom_page_not_found_view

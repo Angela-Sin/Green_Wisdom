@@ -1,6 +1,7 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import BlogPost, POST_CATEGORIES
+from .models import BlogPost, POST_CATEGORIES, Comment
+
 
 
 class BlogPostForm(forms.ModelForm):
@@ -34,4 +35,13 @@ class BlogPostForm(forms.ModelForm):
             "featured_image": "Featured Image",
             "image_alt": "Image Description (for accessibility)",
             "category": "Post Category",
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Add a comment...'}),
         }

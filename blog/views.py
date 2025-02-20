@@ -4,15 +4,19 @@ from django.views.generic import (
     UpdateView,
 )
 
-
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
 from django.db.models import Q
 
-from .models import BlogPost
-from .forms import BlogPostForm
+from .models import BlogPost, Comment, Like
+from .forms import BlogPostForm, CommentForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 class Posts(ListView):
@@ -42,6 +46,22 @@ class PostDetail(DetailView):
     template_name = "blog/post_detail.html"
     model = BlogPost
     context_object_name = "post"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        
+        # Get comments for the post
+        context['comments'] = Comment.objects.filter(post=post)
+        
+        # Ensure user is authenticated before checking likes
+        user = self.request.user
+        if user.is_authenticated:
+            context['is_liked'] = Like.objects.filter(user=user, post=post).exists()
+        else:
+            context['is_liked'] = False  # Default to False for anonymous users
+        
+        return context
 
 
 class AddPost(LoginRequiredMixin, CreateView):
@@ -73,3 +93,38 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
+    
+
+class AddComment(LoginRequiredMixin, CreateView):
+    """ View for adding comments """
+    model = Comment
+    form_class = CommentForm
+    template_name = "blog/add_comment.html"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.post = get_object_or_404(BlogPost, pk=self.kwargs["pk"])
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["post"] = get_object_or_404(BlogPost, pk=self.kwargs["pk"])  # Ensure post is passed
+        return context
+
+    def get_success_url(self):
+        return reverse("post_detail", kwargs={"pk": self.kwargs["pk"]})
+    
+
+class ToggleLike(LoginRequiredMixin, DetailView):
+    """Toggle like for a post."""
+
+    model = BlogPost
+
+    def post(self, request, *args, **kwargs):
+        post = self.get_object()
+        like, created = Like.objects.get_or_create(user=request.user, post=post)
+
+        if not created:
+            like.delete()
+
+        return HttpResponseRedirect(reverse('post_detail', args=[post.id]))
