@@ -22,6 +22,8 @@
 
 # Code validation
 ## Html
+
+
 ## CSS
 [CSS-Valitador](#https://jigsaw.w3.org/css-validator/)
 ![Image](static/images/css.png)
