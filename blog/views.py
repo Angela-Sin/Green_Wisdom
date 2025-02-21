@@ -48,10 +48,10 @@ class PostDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
-        
+
         # Get comments for the post
         context['comments'] = Comment.objects.filter(post=post)
-       
+
         # Ensure user is authenticated before checking likes
         user = self.request.user
         if user.is_authenticated:
@@ -60,7 +60,7 @@ class PostDetail(DetailView):
             ).exists()
         else:
             context['is_liked'] = False  # Default to False for anonymous users
-        
+
         return context
 
 
@@ -87,7 +87,7 @@ class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
-      
+
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Post delete """
@@ -96,7 +96,7 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
-    
+
 
 class AddComment(LoginRequiredMixin, CreateView):
     """ View for adding comments """
@@ -116,7 +116,7 @@ class AddComment(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse("post_detail", kwargs={"pk": self.kwargs["pk"]})
-    
+
 
 class ToggleLike(LoginRequiredMixin, DetailView):
     """Toggle like for a post."""

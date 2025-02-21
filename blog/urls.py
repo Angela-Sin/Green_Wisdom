@@ -1,5 +1,13 @@
 from django.urls import path
-from .views import AddPost, Posts, PostDetail, PostDelete, EditPost, AddComment, ToggleLike
+from .views import (
+    AddPost,
+    Posts,
+    PostDetail,
+    PostDelete,
+    EditPost,
+    AddComment,
+    ToggleLike,
+)
 
 urlpatterns = [
     path("", Posts.as_view(), name="blog_home"),

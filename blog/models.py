@@ -43,7 +43,11 @@ class BlogPost(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=150, null=False, blank=False)
-    category = models.CharField(max_length=50, choices=POST_CATEGORIES, default="tips")
+    category = models.CharField(
+            max_length=50,
+            choices=POST_CATEGORIES,
+            default="tips"
+    )
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -58,7 +62,11 @@ class Comment(models.Model):
     """
     A model for user comments on a blog post
     """
-    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        BlogPost,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -74,7 +82,11 @@ class Like(models.Model):
     """
     A model for user likes on a blog post
     """
-    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='likes')
+    post = models.ForeignKey(
+        BlogPost,
+        on_delete=models.CASCADE,
+        related_name='likes'
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:

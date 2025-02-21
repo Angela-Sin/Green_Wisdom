@@ -7,7 +7,10 @@ class ProfileAdmin(admin.ModelAdmin):
     search_fields = ("user__username", "bio")
 
     def truncated_bio(self, obj):
-        return (obj.bio[:50] + "...") if obj.bio and len(obj.bio) > 50 else obj.bio
+        if obj.bio and len(obj.bio) > 50:
+            return f"{obj.bio[:50]}..."
+        return obj.bio
+
     truncated_bio.short_description = "Bio"
 
 

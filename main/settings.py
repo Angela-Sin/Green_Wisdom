@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
     'localhost', 'https://green-wisdom-99e0528945fb.herokuapp.com'
     ]
 
-APPEND_SLASH = False
+APPEND_SLASH = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Application definition

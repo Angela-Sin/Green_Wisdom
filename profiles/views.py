@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, UpdateView
 from .models import Profile
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .forms import ProfileForm
