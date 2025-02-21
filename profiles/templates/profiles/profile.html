@@ -11,7 +11,7 @@
                 {% if profile.image.url is not none %}
                 <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
                 {% else %}
-                <img src="{% static '/icons/profile-svgrepo-com.svg' %}" alt="Image not found icon">
+                <img src="{% static '/icons/profile-svgrepo-com.svg' %}" class="img-fluid" style="height: 320px; object-fit: cover;" alt="Image not found icon">
                 {% endif %}
             </div>
             <h1>{{ profile.user.username }}</h1>
