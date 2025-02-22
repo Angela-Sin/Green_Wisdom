@@ -33,4 +33,4 @@ urlpatterns = [
 ]
 
 
-handler404 = "home.views.custom_404_view"
+handler404 = "main.views.custom_404_view"
