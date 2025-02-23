@@ -18,9 +18,14 @@
                     <form method="post" action="{% url 'account_login' %}" class="needs-validation">
                         {% csrf_token %}
                         
-                        {# Use Bootstrap form styles #}
                         <div class="mb-3">
-                            {{ form.as_p }}
+                            <label for="{{ form.login.id_for_label }}">{{ form.login.label }}</label>
+                            {{ form.login }}
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                            {{ form.password }}
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">{% trans "Sign In" %}</button>
