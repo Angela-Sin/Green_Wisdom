@@ -8,16 +8,21 @@
 
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow-lg p-4 text-center" style="max-width: 400px;">
-        <h1 class="mb-3">{% trans "Sign Out" %}</h1>
+    <div class="card shadow-lg p-4 text-center" style="max-width: 400px; border-radius: 10px;">
+        <h1 class="mb-3 text-danger">{% trans "Sign Out" %}</h1>
         <p class="text-muted">{% trans "Are you sure you want to sign out?" %}</p>
         
         {% url 'account_logout' as action_url %}
         <form method="post" action="{{ action_url }}">
             {% csrf_token %}
             {{ redirect_field }}
-            <button type="submit" class="btn btn-danger w-100">{% trans "Sign Out" %}</button>
+            <button type="submit" class="btn btn-danger w-100 mb-3 py-2" style="font-size: 18px;">
+                {% trans "Sign Out" %}
+            </button>
         </form>
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100 py-2" style="font-size: 18px;">
+            {% trans "Cancel" %}
+        </a>
     </div>
 </div>
 {% endblock content %}
