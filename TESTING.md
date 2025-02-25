@@ -1,5 +1,13 @@
 # TESTING.md
 
+---
+
+<h1 align="center"><strong>Green Wisdom</strong>
+
+---
+
+![Image](static/images/README/UI%20(2).png)
+
 ## Table of Contents
 
 - [Manual Testing](#manual-testing)
@@ -22,9 +30,9 @@
 
 | **User Story** | **Testing Method** | **Expected Outcome** | **Result** |
 |---------------|-------------------|---------------------|------------|
-| As a user, I want a simple navigation menu to find content easily. | Manual UI Testing | Navigation is intuitive and accessible. | ✅ Pass |
-| As a user, I want the navigation menu to be accessible on all devices. | Responsive Testing | Navigation adjusts properly on different screen sizes. | ✅ Pass |
-| As a user, I want to see social media links for community interaction. | Manual UI Testing | Social media links are visible and clickable. | ✅ Pass |
+| As a user, I want a simple navigation menu to find content easily. | Manual UI Testing | [Navigation](#common-elements-on-all-pages) is intuitive and accessible. | ✅ Pass |
+| As a user, I want the navigation menu to be accessible on all devices. | Responsive Testing | [Navigation](#common-elements-on-all-pages) adjusts properly on different screen sizes. | ✅ Pass |
+| As a user, I want to see social media links for community interaction. | Manual UI Testing | [Social media](#common-elements-on-all-pages) links are visible and clickable. | ✅ Pass |
 | As a user, I want to register an account to access features. | Manual UI Testing | Registration form submits successfully and logs user in. | ✅ Pass |
 | As a user, I want to log in and out of my account securely. | Manual UI Testing | Login and logout function correctly. | ✅ Pass |
 | As a user, I want to browse and search for blog posts easily. | Functional Testing | Search functionality works correctly. | ✅ Pass |
@@ -39,6 +47,28 @@
 
 All tests were successfully completed, ensuring a seamless user experience across all functionalities. 
 
+### Common Elements on All Pages
+- **Navigation Bar**  
+  The navigation bar provides easy and seamless access to different pages and stays fixed at the top of the page as you scroll.  
+  The following links are included:
+  - **Home** (Currently Active)
+  - **Blog**
+  - **New** (Create Post)
+  - **Profile**
+  - **Logout**
+  - **Search Bar** (For quick search functionality)
+
+![Image](static/images/README/Navbar.png)
+
+- **Sticky Footer**  
+  The footer is fixed at the bottom of all pages and contains social media icons:
+  - Facebook
+  - GitHub
+  - Instagram
+  - YouTube
+
+![Image](static/images/README/footer.png)
+
 # Lighthouse 
 ## Mobile Phone
 ![Image](static/images/README/Testing.png)
@@ -47,6 +77,23 @@ All tests were successfully completed, ensuring a seamless user experience acros
 ![Image](static/images/README/testing1.png)
 # Code validation
 ## Html
+### index.html
+![Image](static/images/README/Indexhtml.png)
+### posts.html
+![Image](static/images/README/postshtml.png)
+### post_detail.html
+![Image](static/images/README/postdetailhtml.png)
+### profile.html
+![Image](static/images/README/profilehtml.png)
+![Image](static/images/README/editprofilehtml.png)
+### edit_post.html
+![Image](static/images/README/editposthtml.png)
+### blogpost_confirm_delete.html
+![Image](static/images/README/deteteposthtml.png)
+### add_post.html
+![Image](static/images/README/newposthtml.png)
+### add_comment.html
+![Image](static/images/README/commentposthtml.png)
 
 
 ## CSS
@@ -77,9 +124,12 @@ The site was tested across multiple browsers for consistency and responsiveness:
 
 | Browser           | Result  |
 |------------------|--------|
-| 🌍 **Google Chrome**  | ✅ Pass  |
+| 🌍 **Google Chrome**   | ✅ Pass  |
 | 🦊 **Mozilla Firefox** | ✅ Pass  |
 | 🎭 **Microsoft Edge**  | ✅ Pass  |
+|🏴‍☠️ **Opera**            | ✅ Pass  |
+
+
 
 The site maintains a **consistent design** and remains **fully responsive** across different browsers.
 
@@ -102,3 +152,6 @@ A missing configuration in models.py related to Cloudinary was causing errors. A
 ## ISSUE #2
 After upgrading texteditor reachtexteditor was changed to simple texteditor, so I lefted 4.14.0 with allert message.
 ![image](static/images/bug.png)
+
+## ADVISE 
+By advise in #peer-code-review in **Slack** changed Like button for a fivicon.
