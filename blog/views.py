@@ -59,7 +59,7 @@ class PostDetail(DetailView):
                 user=user, post=post
             ).exists()
         else:
-            context['is_liked'] = False  # Default to False for anonymous users
+            context['is_liked'] = False
 
         return context
 

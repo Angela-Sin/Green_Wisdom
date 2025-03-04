@@ -9,5 +9,3 @@ class Index(ListView):
 
     def get_queryset(self):
         return self.model.objects.all().order_by('-published_date')[:4]
-
-
