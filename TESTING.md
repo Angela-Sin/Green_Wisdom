@@ -173,4 +173,4 @@ After upgrading texteditor reachtexteditor was changed to simple texteditor, so 
 ![image](static/images/bug.png)
 
 ## ADVISE 
-By advise in #peer-code-review in **Slack** changed Like button for a fivicon.
+By advise in #peer-code-review in **Slack** changed Like button for a fivicon. ![Image](static/images/README/Screenshot%202025-03-04%20093035.png)
