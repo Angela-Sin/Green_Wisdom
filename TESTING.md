@@ -8,6 +8,10 @@
 
 ![Image](static/images/README/UI%20(2).png)
 
+## [LIVE SITE](https://green-wisdom-99e0528945fb.herokuapp.com//)
+
+## [GITHUB RESPOSITORY](https://github.com/Angela-Sin/Green_Wisdom)
+
 ## Table of Contents
 
 - [Manual Testing](#manual-testing)
@@ -35,7 +39,7 @@
 | As a user, I want to see social media links for community interaction. | Manual UI Testing | [Social media](#common-elements-on-all-pages) links are visible and clickable. | ✅ Pass |
 | As a user, I want to register an account to access features. | Manual UI Testing | Registration form submits successfully and logs user in. | ✅ Pass |
 | As a user, I want to log in and out of my account securely. | Manual UI Testing | Login and logout function correctly. | ✅ Pass |
-| As a user, I want to browse and search for blog posts easily. | Functional Testing | Search functionality works correctly. | ✅ Pass |
+| As a user, I want to browse and search for blog posts easily. | Functional Testing | [Search](#common-elements-on-all-pages) functionality works correctly. | ✅ Pass |
 | As a user, I want to add new blog posts to share with others. | CRUD Testing | Blog post submission form functions correctly. | ✅ Pass |
 | As a user, I want to edit my blog posts when needed. | CRUD Testing | Blog posts can be updated successfully. | ✅ Pass |
 | As a user, I want to delete my own blog posts. | CRUD Testing | Users can remove their own blog posts. | ✅ Pass |
@@ -57,8 +61,22 @@ All tests were successfully completed, ensuring a seamless user experience acros
   - **Profile**
   - **Logout**
   - **Search Bar** (For quick search functionality)
+    - User can search for posts by entering a keyword in the search bar. The search function looks for matches in the title, summary, content, and category of posts.
+
+         - If a match is found, the relevant posts will be displayed.
+         - If no keyword is entered, all posts will be shown.
 
 ![Image](static/images/README/Navbar.png)
+
+- ## Responsive Navigation for Smaller Devices
+  On tablets and smaller devices, the website uses a hamburger menu (☰) to improve navigation.
+
+   - The menu is hidden by default and appears when the hamburger icon is clicked.
+   - It includes links to Home, Blog, New, Register, and Login for easy access.
+   - A search bar is placed below the menu, allowing users to quickly find content.
+
+![Image](static/images/README/header.t.png)
+![Image](static/images/README/header.m.png)
 
 - **Sticky Footer**  
   The footer is fixed at the bottom of all pages and contains social media icons:
@@ -71,12 +89,13 @@ All tests were successfully completed, ensuring a seamless user experience acros
 
 # Lighthouse 
 ## Mobile Phone
-![Image](static/images/README/Testing.png)
+![Image](static/images/README/mobile.re.png)
 
-## Desctop
+## Desktop
 ![Image](static/images/README/testing1.png)
+
 # Code validation
-## Html
+## [Html](https://validator.w3.org/)
 ### index.html
 ![Image](static/images/README/Indexhtml.png)
 ### posts.html
@@ -97,10 +116,10 @@ All tests were successfully completed, ensuring a seamless user experience acros
 
 
 ## CSS
-[CSS-Valitador](#https://jigsaw.w3.org/css-validator/)
+## [CSS-Valitador](#https://jigsaw.w3.org/css-validator/)
 ![Image](static/images/css.png)
 # Python
-[pep8ci](#https://pep8ci.herokuapp.com/)
+## [pep8ci](#https://pep8ci.herokuapp.com/)
 ![Image](static/images/README/test1.png)
 ![Image](static/images/README/test2.png)
 ![Image](static/images/README/test3.png)

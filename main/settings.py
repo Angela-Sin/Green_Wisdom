@@ -30,14 +30,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1', '.herokuapp.com',
     'localhost', 'https://green-wisdom-99e0528945fb.herokuapp.com'
     ]
 
-APPEND_SLASH = True
+APPEND_SLASH = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Application definition
