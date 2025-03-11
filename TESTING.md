@@ -152,6 +152,7 @@ The site was tested across multiple browsers for consistency and responsiveness:
 
 The site maintains a **consistent design** and remains **fully responsive** across different browsers.
 
+
 # Bug-Issue
 ## ISSUE #1 Deployment and Debugging Issues (Heroku, Cloudinary, and django-allauth)
 ### During the project setup and development, the following issues and resolutions were encountered:
@@ -174,3 +175,7 @@ After upgrading texteditor reachtexteditor was changed to simple texteditor, so 
 
 ## ADVISE 
 By advise in #peer-code-review in **Slack** changed Like button for a fivicon. ![Image](static/images/README/Screenshot%202025-03-04%20093035.png)
+
+# Addition 
+
+If a user tries to access the profile link with an account number (e.g., https://green-wisdom-99e0528945fb.herokuapp.com/profiles/user/1/) without logging in, they will encounter a 500 error. If they attempt to access the link without specifying an account number (e.g., https://green-wisdom-99e0528945fb.herokuapp.com/profiles/user/), they will be redirected to a 404 customer error page.
