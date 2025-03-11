@@ -8,7 +8,7 @@
 
 ![Image](static/images/README/UI%20(2).png)
 
-## [LIVE SITE](https://green-wisdom-99e0528945fb.herokuapp.com//)
+## [LIVE SITE](https://green-wisdom-99e0528945fb.herokuapp.com/)
 
 ## [GITHUB RESPOSITORY](https://github.com/Angela-Sin/Green_Wisdom)
 
